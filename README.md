@@ -139,7 +139,7 @@ print(confusion_matrix(y_test,x_test_predictions))
 
 print(classification_report(y_test,x_test_predictions))
 
-img = image.load_img('imgagefive.png')
+img = image.load_img('imgagefive.jpg')
 
 img_tensor = tf.convert_to_tensor(np.asarray(img))
 img_28 = tf.image.resize(img_tensor,(28,28))
