@@ -163,21 +163,22 @@ print(x_single_prediction)
 ## OUTPUT
 
 ### Training Loss, Validation Loss Vs Iteration Plot
+![image](https://github.com/PriyankaAnnadurai/mnist-classification/assets/118351569/7ece77a0-eb73-404f-a87a-399bf9d08ccf)
 
-![image](https://github.com/PriyankaAnnadurai/mnist-classification/assets/118351569/67ea3314-8736-460d-9f46-9f77e266b8ff)
-![image](https://github.com/PriyankaAnnadurai/mnist-classification/assets/118351569/8cdbc3c5-c15d-4a54-9d90-e2472d2204ec)
+![image](https://github.com/PriyankaAnnadurai/mnist-classification/assets/118351569/5858cc96-bdf2-4ea7-8ae6-c58d2b25714a)
 
 
 ### Classification Report
 
-![image](https://github.com/PriyankaAnnadurai/mnist-classification/assets/118351569/69433fd6-3994-4e5f-8d54-51d320320a2b)
+![image](https://github.com/PriyankaAnnadurai/mnist-classification/assets/118351569/d7be119f-a0e1-42b8-82eb-29126cfe7fad)
+
 
 ### Confusion Matrix
-![image](https://github.com/PriyankaAnnadurai/mnist-classification/assets/118351569/0e8e7d67-810c-405f-8684-4999cb40fa7d)
+![image](https://github.com/PriyankaAnnadurai/mnist-classification/assets/118351569/89fd1f7c-eeb5-43e2-86ed-a760c871cfe2)
 
 
 ### New Sample Data Prediction
-![image](https://github.com/PriyankaAnnadurai/mnist-classification/assets/118351569/2c1f1102-c2e7-4174-9626-11e4e60ee817)
+![image](https://github.com/PriyankaAnnadurai/mnist-classification/assets/118351569/73a0188f-f0f2-4fd5-a5c5-7afdec00be7d)
 
 
 ## RESULT
