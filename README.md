@@ -9,9 +9,12 @@ Digit classification and to verify the response for scanned handwritten images.
 
 The MNIST dataset is a collection of handwritten digits. The task is to classify a given image of a handwritten digit into one of 10 classes representing integer values from 0 to 9, inclusively. The dataset has a collection of 60,000 handwrittend digits of size 28 X 28. Here we build a convolutional neural network model that is able to classify to it's appropriate numerical value.
 
+![image](https://github.com/PriyankaAnnadurai/mnist-classification/assets/118351569/39c33773-b4a5-43ae-a225-f60940e375bd)
+
 ## Neural Network Model
 
-Include the neural network model diagram.
+![image](https://github.com/PriyankaAnnadurai/mnist-classification/assets/118351569/9aeb627d-acdd-4007-98e1-12422f0264ef)
+
 
 ## DESIGN STEPS
 
@@ -51,6 +54,7 @@ Fit the model and predict the single input
 ### Register Number: 212222230113
 
 ```python
+## Load the dataset from the tensorflow library.
 import numpy as np
 from tensorflow import keras
 from tensorflow.keras import layers
@@ -62,14 +66,15 @@ import pandas as pd
 from sklearn.metrics import classification_report,confusion_matrix
 from tensorflow.keras.preprocessing import image
 
+## Preprocess the dataset.
 (X_train, y_train), (X_test, y_test) = mnist.load_data()
-
+     
 X_train.shape
 
 X_test.shape
 
 single_image= X_train[0]
-
+     
 single_image.shape
 
 plt.imshow(single_image,cmap='gray')
@@ -104,82 +109,97 @@ y_train_onehot[500]
 X_train_scaled = X_train_scaled.reshape(-1,28,28,1)
 X_test_scaled = X_test_scaled.reshape(-1,28,28,1)
 
-model = keras.Sequential()
+## Create and train your model.
 model = keras.Sequential()
 model.add(layers.Input(shape=(28,28,1)))
-model.add(layers.Conv2D(filters=16,kernel_size=(3,3),activation='relu'))
 model.add(layers.Conv2D(filters=32,kernel_size=(3,3),activation='relu'))
 model.add(layers.MaxPool2D(pool_size=(2,2)))
 model.add(layers.Flatten())
-model.add(layers.Dense(units=32,activation='relu'))
-model.add(layers.Dense(units=10,activation='softmax'))
+model.add(layers.Dense(32,activation='relu'))
+model.add(layers.Dense(64,activation='relu'))
+model.add(layers.Dense(10,activation='softmax'))
 
 model.summary()
 
-# Choose the appropriate parameters
-model.compile(loss='categorical_crossentropy',
-              optimizer='adam',
-              metrics='accuracy')
+## Compile the model
+model.compile(loss='categorical_crossentropy',optimizer='adam',metrics='accuracy')
 
-model.fit(X_train_scaled ,y_train_onehot, epochs=5,
-          batch_size=64,
-          validation_data=(X_test_scaled,y_test_onehot))
+## Fit the model    
+model.fit(X_train_scaled ,y_train_onehot, epochs=8,batch_size=128, validation_data=(X_test_scaled,y_test_onehot))
 
+## Include the training loss, validation loss vs iteration plot.
 metrics = pd.DataFrame(model.history.history)
-
 metrics.head()
 
+print("Priyanka A - 212222230113")
 metrics[['accuracy','val_accuracy']].plot()
 
+print("Priyanka A - 212222230113")
 metrics[['loss','val_loss']].plot()
 
+## Test the model for your handwritten scanned images.
 x_test_predictions = np.argmax(model.predict(X_test_scaled), axis=1)
 
+print("Priyanka A - 212222230113")
 print(confusion_matrix(y_test,x_test_predictions))
 
+print("Priyanka A - 212222230113")
 print(classification_report(y_test,x_test_predictions))
 
-img = image.load_img('imgagefive.jpg')
+# Prediction for a single input
+img = image.load_img('3.jpg')
+type(img)
 
+img = image.load_img('3.jpg')
 img_tensor = tf.convert_to_tensor(np.asarray(img))
 img_28 = tf.image.resize(img_tensor,(28,28))
 img_28_gray = tf.image.rgb_to_grayscale(img_28)
 img_28_gray_scaled = img_28_gray.numpy()/255.0
-
-x_single_prediction = np.argmax(model.predict(img_28_gray_scaled.reshape(1,28,28,1)),axis=1)
+     
+x_single_prediction = np.argmax(
+    model.predict(img_28_gray_scaled.reshape(1,28,28,1)),
+     axis=1)
 
 print(x_single_prediction)
 
+print("Priyanka A - 212222230113")
 plt.imshow(img_28_gray_scaled.reshape(28,28),cmap='gray')
 
 img_28_gray_inverted = 255.0-img_28_gray
 img_28_gray_inverted_scaled = img_28_gray_inverted.numpy()/255.0
+     
+x_single_prediction = np.argmax(
+    model.predict(img_28_gray_inverted_scaled.reshape(1,28,28,1)),
+     axis=1)
 
-x_single_prediction = np.argmax(model.predict(img_28_gray_inverted_scaled.reshape(1,28,28,1)),axis=1)
-
+print("Priyanka A - 212222230113")
 print(x_single_prediction)
 ```
 
 ## OUTPUT
 
 ### Training Loss, Validation Loss Vs Iteration Plot
-![image](https://github.com/PriyankaAnnadurai/mnist-classification/assets/118351569/7ece77a0-eb73-404f-a87a-399bf9d08ccf)
 
-![image](https://github.com/PriyankaAnnadurai/mnist-classification/assets/118351569/5858cc96-bdf2-4ea7-8ae6-c58d2b25714a)
+![image](https://github.com/PriyankaAnnadurai/mnist-classification/assets/118351569/339d3f3d-5b79-49b0-95b5-0d160530e607)
+
+![image](https://github.com/PriyankaAnnadurai/mnist-classification/assets/118351569/fdf4cb72-ee4f-4baa-b142-c2b47b5376df)
 
 
 ### Classification Report
 
-![image](https://github.com/PriyankaAnnadurai/mnist-classification/assets/118351569/d7be119f-a0e1-42b8-82eb-29126cfe7fad)
+![image](https://github.com/PriyankaAnnadurai/mnist-classification/assets/118351569/3d76ec8a-e713-4582-ad15-ac293e9698fa)
 
 
 ### Confusion Matrix
-![image](https://github.com/PriyankaAnnadurai/mnist-classification/assets/118351569/89fd1f7c-eeb5-43e2-86ed-a760c871cfe2)
+
+![image](https://github.com/PriyankaAnnadurai/mnist-classification/assets/118351569/f6c86093-1d96-48d7-863e-4df382ee37e4)
 
 
 ### New Sample Data Prediction
-![image](https://github.com/PriyankaAnnadurai/mnist-classification/assets/118351569/73a0188f-f0f2-4fd5-a5c5-7afdec00be7d)
 
+![image](https://github.com/PriyankaAnnadurai/mnist-classification/assets/118351569/3e4675fb-ebe3-4e36-90ac-35aa00e51774)
+
+![image](https://github.com/PriyankaAnnadurai/mnist-classification/assets/118351569/6338f066-452a-45d1-a85b-097fbc21dc60)
 
 ## RESULT
 Thus a convolutional deep neural network for digit classification and to verify the response for scanned handwritten images is written and executed successfully.
