@@ -9,11 +9,11 @@ Digit classification and to verify the response for scanned handwritten images.
 
 The MNIST dataset is a collection of handwritten digits. The task is to classify a given image of a handwritten digit into one of 10 classes representing integer values from 0 to 9, inclusively. The dataset has a collection of 60,000 handwrittend digits of size 28 X 28. Here we build a convolutional neural network model that is able to classify to it's appropriate numerical value.
 
-![image](https://github.com/PriyankaAnnadurai/mnist-classification/assets/118351569/39c33773-b4a5-43ae-a225-f60940e375bd)
+<img src=https://github.com/PriyankaAnnadurai/mnist-classification/assets/118351569/39c33773-b4a5-43ae-a225-f60940e375bd height=200 width=300>
 
 ## Neural Network Model
 
-![image](https://github.com/PriyankaAnnadurai/mnist-classification/assets/118351569/9aeb627d-acdd-4007-98e1-12422f0264ef)
+<img src=https://github.com/PriyankaAnnadurai/mnist-classification/assets/118351569/9aeb627d-acdd-4007-98e1-12422f0264ef height=200 width=300>
 
 
 ## DESIGN STEPS
@@ -180,24 +180,24 @@ print(x_single_prediction)
 
 ### Training Loss, Validation Loss Vs Iteration Plot
 
-![image](https://github.com/PriyankaAnnadurai/mnist-classification/assets/118351569/339d3f3d-5b79-49b0-95b5-0d160530e607)
+<img src = https://github.com/PriyankaAnnadurai/mnist-classification/assets/118351569/339d3f3d-5b79-49b0-95b5-0d160530e607 width=300 height=300>
 
-![image](https://github.com/PriyankaAnnadurai/mnist-classification/assets/118351569/fdf4cb72-ee4f-4baa-b142-c2b47b5376df)
+<img src = https://github.com/PriyankaAnnadurai/mnist-classification/assets/118351569/fdf4cb72-ee4f-4baa-b142-c2b47b5376df width=300 height=300>
 
 
 ### Classification Report
 
-![image](https://github.com/PriyankaAnnadurai/mnist-classification/assets/118351569/3d76ec8a-e713-4582-ad15-ac293e9698fa)
 
+<img src = https://github.com/PriyankaAnnadurai/mnist-classification/assets/118351569/3d76ec8a-e713-4582-ad15-ac293e9698fa width=300 height=200>
 
 ### Confusion Matrix
 
-![image](https://github.com/PriyankaAnnadurai/mnist-classification/assets/118351569/f6c86093-1d96-48d7-863e-4df382ee37e4)
-
+<img src = https://github.com/PriyankaAnnadurai/mnist-classification/assets/118351569/f6c86093-1d96-48d7-863e-4df382ee37e4 width=300 height=200>
 
 ### New Sample Data Prediction
 
-![image](https://github.com/PriyankaAnnadurai/mnist-classification/assets/118351569/3e4675fb-ebe3-4e36-90ac-35aa00e51774)
+
+<img src = https://github.com/PriyankaAnnadurai/mnist-classification/assets/118351569/3e4675fb-ebe3-4e36-90ac-35aa00e51774 width=300 height=200>
 
 ![image](https://github.com/PriyankaAnnadurai/mnist-classification/assets/118351569/6338f066-452a-45d1-a85b-097fbc21dc60)
 
